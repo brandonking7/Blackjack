@@ -1,7 +1,7 @@
 window.onload = function() {
 
-  // var response = prompt("Hi! What's your favorite food?");
-  alert(`Welcome to Blackjack 21 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
+
+  alert(`Welcome to Blackjack 21 - The objective of the game is to beat the dealer. If your cards total higher than the dealer's cards without going over 21 you win. You are not trying to get close to 21. If your hand or the dealer's hand goes over 21 you "Bust." If you bust you automatically lose. If the dealer busts and you do not you win. The player must act first. If the player busts he loses regardless if the dealer busts or not.`);
 
 }
 
@@ -215,8 +215,9 @@ function win() {
 }
 
 function draw() {
-  $('#gameBoard').append('<div class="result">You Draw!</div');
+  // $('#gameBoard').append('<div class="result">You Draw!</div');
   playSound('draw');
+  alert('You draw with the dealer')
 }
 
 function lose() {
