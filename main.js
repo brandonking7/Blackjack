@@ -1,9 +1,10 @@
-// window.onload = function() {
+window.onload = function() {
 
-//   // var response = prompt("Hi! What's your favorite food?");
-//   alert(`Welcome to Blackjack 21!`);
+  // var response = prompt("Hi! What's your favorite food?");
+  alert(`Welcome to Blackjack 21 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
 
-// }
+}
+
 
 var cash = 1000;
 var bet = 100;
@@ -54,6 +55,7 @@ function startGame() {
   showValue();
   if( playerHand.value == 21) {
     win();
+    alert("BLACKJACK!!")
     $('.buttons').addClass('hide');
     $('#reset').removeClass('hide');
     if(deck.length < 10) {
@@ -204,10 +206,12 @@ function updateCashBet() {
 }
 
 function win() {
-  $('#gameBoard').append('<div class="result">You win $' + bet.toString() + '!</div');
+  // $('#gameBoard').append('<div class="result">You wiiiiiiiiin $' + bet.toString() + '!</div');
+  $('#gameBoard').append('<div class="result"></div');
   cash += bet;
   updateCashBet();
   playSound('win');
+  alert('You win $' + bet.toString())
 }
 
 function draw() {
@@ -216,13 +220,16 @@ function draw() {
 }
 
 function lose() {
-  $('#gameBoard').append('<div class="result">You lose $' + bet.toString() + '!</div');
+  // $('#gameBoard').append('<div class="result">You lose $' + bet.toString() + '!</div');
+  $('#gameBoard').append('<div class="result"></div');
   cash -= bet;
   updateCashBet();
   if( cash < bet ) {
     bet = 100;
   }
   playSound('lose');
+  // alert('<div class="result">You lose $' + bet.toString() + '!</div');
+  alert('You lose $' + bet.toString())
 }
 
 function checkScore() {

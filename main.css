@@ -6,6 +6,38 @@
 
 }
 */
+
+* {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+html {
+  font-size: 8px;
+}
+
+body{
+  padding: 1rem;
+  background: #136d87;
+  color: #f7f7f7;
+  user-select: none;
+
+}
+
+
 .game {
   position: absolute;
   display: flex;
@@ -22,8 +54,14 @@
 }
 
 h1 {
-  color: rgba(0,0,0,0.5);
+  color: rgba(0,0,0,1);
   z-index: -1;
+
+}
+img {
+  opacity: 0.3;
+  width: 400px;
+  height: 350px;
 }
 
 .button {
@@ -65,122 +103,24 @@ h1 {
     font-size: 16px;
 }
 
-.bThree {
+.bThree img {
+  opacity: 1;
+  border: none;
+  width: 100px;
+  height: 120px;
+  background-color: #136d87;
+}
+
+.nextButton {
     width: 90px;
     height: 90px;
     border: none;
     border-radius: 80px;
     color: white;
+    align-self: flex-end;
     font-size: 16px;
 }
 
-.dealersHand {
-  display: flex;
-  margin: auto;
-  position: absolute;
-  line-height: 35px;
-
-  width: 100%;
-  height: 250px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  visibility: visible;
-
-}
-
-#dealerFirst {
-  width: 100px;
-  height: 150px;
-  background-color: #fff;
-  border: solid black;
-  border-radius: 5px;
-  text-indent: -75px;
-}
-
-#dealerSecond {
-  width: 100px;
-  height: 150px;
-  margin-left: -50px;
-  background-color: #fff;
-  border: solid black;
-  border-radius: 5px;
-  text-indent: -75px;
-
-}
-
-.playersHand {
-  display: flex;
-  margin: auto;
-  line-height: 35px;
-  text-align: center;
-  justify-content: center;
-  justify-content: space-around;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  width: 250px;
-  height: 250px;
-  top: 230px;
-  margin-left: -125px;
-  visibility: visible;
-
-  }
-
-
-
-#firstCard {
-
-  width: 150px;
-  height: 200px;
-  margin-right: 5px;
-  background-color: #fff;
-  border-radius: 5px;
-  border: solid black;
-  text-indent: -120px;
-
-}
-
-#secondCard {
-  width: 130px;
-  height: 200px;
-  margin-left: -150px;
-  background-color: #fff;
-  border-radius: 5px;
-  border: solid black;
-  text-indent: -100px;
-
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }
-.clearfix { display: inline-block; }
-/* start commented backslash hack \*/
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
-/* close commented backslash hack */
-
-html {
-  font-size: 8px;
-}
-
-body{
-  padding: 1rem;
-  background: #136d87;
-  color: #f7f7f7;
-  user-select: none;
-
-}
 
 .container {
   max-width: 1000px;
@@ -213,7 +153,11 @@ body{
 
 #reset,
 #startover{
+  margin-top: 100px;
+  height: 200px;
   width: 100%;
+  color: black;
+  background-color: white;
 }
 
 .button.last {
@@ -253,19 +197,47 @@ body{
 
 
 .computer-value {
-  text-align: right;
-  font-size: 2.5rem;
-  z-index: 1;
-}
-
-.player-value {
+  position: absolute;
+  display: flex;
+  float: right;
+  /*margin-right: 35%;
+  margin-top: 10rem;*/
+  left: 54%;
+  top: 3%;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  font-size: 2.5rem;
-  width: 70px;
-  height: 70px;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  /*line-height: 60px;*/
   z-index: 1;
   border: solid black;
   border-radius: 50px;
+  background-color: black;
+
+
+}
+
+.player-value {
+  position: absolute;
+  display: flex;
+  float: right;
+  /*margin-right: 35%;
+  margin-top: 10rem;*/
+  left: 54%;
+  top: 38%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  /*line-height: 60px;*/
+  z-index: 1;
+  border: solid black;
+  border-radius: 50px;
+  background-color: black;
 }
 
 .title {
@@ -361,6 +333,10 @@ body{
 .red {
   color: #e75757;
 }
+#playStay {
+  border: transparent;
+  background-color: transparent;
+}
 
 @media screen and (min-width: 401px) {
   html {
@@ -379,4 +355,5 @@ body{
     font-size: 16px;
   }
 }
+
 
